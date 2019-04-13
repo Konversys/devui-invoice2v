@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"/>
+    <title>Накладная приложение приема выдачи инвентаря</title>
+  </head>
+  <body>
+    <div class="small font-weight-bold text-right" style="margin-right: 3%; margin-top: 0.3%;">Форма ФИУ-20</div>
+    <div class="form-group row" style="margin-left: 2.4%; margin-bottom: 0px;">
+        <label  class="font-weight-bold">Накладная-приложение №</label >
+        <div class="col-sm-2">
+            <input style="height: 28px" class="form-control form-control-sm" type="text" placeholder="№ накладной">
+        </div>
+        <label  class="font-weight-bold">от</label >
+        <div class="col-sm-2">
+            <input type="date" style="height: 28px" name="bday" min="2010-00-01" max="3000-12-31" class="form-control">
+        </div>
+    </div>
+    <div class="small" style="margin-left: 2.4%;">На выдачу (приему) инвентаря</div>
+    <div class="form-group row" style="margin-left: 2.4%; margin-top: 1%">
+        <strong>поезд (состав): поезд </strong>
+        <div class="col-sm-1">
+            <input style="height: 30px" class="form-control form-control-sm" type="text" placeholder="№ поезда">
+        </div>
+    </div>
+    <table class="table table-bordered text-center small" style="margin: auto; margin-top: 1%; margin-bottom: 1%; width: 95%;">
+      <thead>
+        <tr>
+            <th scope="col" colspan="2" rowspan="2" >
+                <table style="margin: auto; width: 100%;">
+                    <tbody>
+                    <tr>
+                        <th scope="col">вагон №</th>
+                        <th scope="col"><input style="height: 30px" class="form-control form-control-sm" type="text" placeholder="№ вагона"></th>
+                    </tr>
+                    <tr>
+                        <th scope="col">зав.№:</th>
+                        <th scope="col"><input style="height: 30px" class="form-control form-control-sm" type="text" placeholder="Заводской №"></th>
+                    </tr>
+                    </tbody>
+                </table>
+            </th>
+            <th class="h6 font-weight-bold" scope="col" colspan="2" rowspan="2">ВЫЕЗД В РЕЙС</th>
+            <th class="h6 font-weight-bold" scope="col" colspan="6">ВОЗВРАТ ИЗ РЕЙСА</th>
+        </tr>
+        <tr>
+            <th scope="col" colspan="3" >Заполняется проводником</th>
+            <th scope="col" colspan="3" >Заполняется кладовщиком</th>
+        </tr>
+        <tr>
+            <th scope="col">№ п/п</th>
+            <th scope="col" class="text-weight-normal">Наименование</th>
+            <th scope="col">Остаток (застил) шт.</th>
+            <th scope="col">Выдано (шт.)</th>
+            <th scope="col">Сдано использованного (шт.)</th>
+            <th scope="col">Сдано неиспользованного (шт.)</th>
+            <th scope="col">Остаток (застил) шт.</th>
+            <th scope="col">Принято использованного (шт.)</th>
+            <th scope="col">Принято неиспользованного (шт.)</th>
+            <th scope="col">Недостача</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <th scope="col" class="text-left">1</th>
+              <th scope="col" class="text-left">Книга описи и учета съемного мягкого имущества (Форма-11)</th>
+              <th scope="col"><input style="margin: 0px; height: 100%; width: 100%" class="form-control form-control-sm" type="text" placeholder="№ вагона"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left">2</th>
+              <th scope="col" class="text-left">Ковровая дорожка купейная шерсть (1,5*0,65)</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left">3</th>
+              <th scope="col" class="text-left">Комплект бязь, х/б рабочий</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="font-weight-normal text-left"></th>
+              <th scope="col" class="font-weight-normal text-left">Простынь бязь</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left"></th>
+              <th scope="col" class="font-weight-normal text-left">Наволочка бязь</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left"></th>
+              <th scope="col" class="font-weight-normal text-left">Полотенце х/б</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left">4</th>
+              <th scope="col" class="text-left">Комплект купе бязь</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left"></th>
+              <th scope="col" class="font-weight-normal text-left">Простынь бязь</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left"></th>
+              <th scope="col" class="font-weight-normal text-left">Наволочка бязь</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left"></th>
+              <th scope="col" class="font-weight-normal text-left">Пододеяльник бязь</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left"></th>
+              <th scope="col" class="font-weight-normal text-left">Полотенце махра</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal">XXX</th>
+              <th scope="col" class="font-weight-normal"></th>
+          <tr>
+              <th scope="col" class="text-left">5</th>
+              <th scope="col" class="text-left">Матрац ватный</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left">6</th>
+              <th scope="col" class="text-left">Мешок для хранения постельного белья</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left">7</th>
+              <th scope="col" class="text-left">Одеяло синтетическое волокно</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left">8</th>
+              <th scope="col" class="text-left">Подушка синтетическое волокно</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left">9</th>
+              <th scope="col" class="text-left">Полотенце полулен</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left">10</th>
+              <th scope="col" class="text-left">Полотенце х/б</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left">11</th>
+              <th scope="col" class="text-left">Полотенце шелк</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          <tr>
+              <th scope="col" class="text-left">12</th>
+              <th scope="col" class="text-left">Салфетка для подоконных столиков полиэстер серая</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tr>
+          <tr>
+              <th scope="col" class="text-left">13</th>
+              <th scope="col" class="text-left">Чехол на матрац х/б</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+          </tr>
+        </tbody>
+      </table>
+      <strong style="margin-left: 2.4%">В рейс: </strong>
+      <strong>21 августа 2018 г.</strong>
+      <table class="table table-bordered small w-75" style="margin-left: 2.4%; margin-top: 1%; width: 95%;">
+        <thead>
+            <tr class="w-25">
+              <th scope="col" class="w-25"></th>
+              <th scope="col" class="text-center text-weight-normal">Инициалы</th>
+              <th scope="col" class="text-center">Табельный номер</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="col" class="font-weight-normal">Выдал</th>
+            <th scope="col" class="font-weight-normal"></th>
+            <th scope="col" class="font-weight-normal"></th>
+          </tr>
+          <tr>
+            <th scope="col" class="font-weight-normal">Принял экипировщик</th>
+            <th scope="col" class="font-weight-normal"></th>
+            <th scope="col" class="font-weight-normal"></th>
+          </tr>
+          <tr>
+            <th scope="col" class="font-weight-normal">Принял проводник</th>
+            <th scope="col" class="font-weight-normal"></th>
+            <th scope="col" class="font-weight-normal"></th>
+          </tr>
+          <tr>
+            <th scope="col" class="font-weight-normal">Принял проводник</th>
+            <th scope="col" class="font-weight-normal"></th>
+            <th scope="col" class="font-weight-normal"></th>
+          </tr>
+        </tbody>
+      </table>
+      <strong style="margin-left: 2.4%;">Из рейса: </strong>
+      <strong>23 августа 2018 г.</strong>
+      <table class="table table-bordered small w-75" style="margin-left: 2.4%;; margin-top: 1%; width: 95%;">
+          <thead>
+              <tr>
+                <th scope="col" class="w-25"></th>
+                <th scope="col" class="text-center text-weight-normal">Инициалы</th>
+                <th scope="col" class="text-center">Табельный номер</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="col" class="font-weight-normal">Сдал проводник</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+            </tr>
+            <tr>
+              <th scope="col" class="font-weight-normal">Принял экипировщик</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+            </tr>
+            <tr>
+              <th scope="col" class="font-weight-normal">Принял использованное</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+            </tr>
+            <tr>
+              <th scope="col" class="font-weight-normal">Принял неиспользованное</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+            </tr>
+            <tr>
+              <th scope="col" class="font-weight-normal">Представитель РЖД</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+            </tr>
+            <tr>
+              <th scope="col" class="font-weight-normal">ЛНП</th>
+              <th scope="col" class="font-weight-normal"></th>
+              <th scope="col" class="font-weight-normal"></th>
+            </tr>
+          </tbody>
+        </table>
+        <div class="font-weight-bold text-right" style="margin-right: 2%; margin-top: 0.3%;">Объяснения виновного в недостаче лица: С недостачей согласен. Прошу вычесть из заработной платы.</div>
+        <div class="font-weight-bold text-right" style="margin-right: 30%; margin-top: 0.3%;">Фамилия: </div>
+  </body>
+</html>
