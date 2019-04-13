@@ -15,22 +15,23 @@
     <title>Накладная приложение приема выдачи инвентаря</title>
   </head>
   <body>
+  <form action="" method="post">
     <div class="small font-weight-bold text-right" style="margin-right: 3%; margin-top: 0.3%;">Форма ФИУ-20</div>
     <div class="form-group row" style="margin-left: 2.4%; margin-bottom: 0px;">
         <label  class="font-weight-bold">Накладная-приложение №</label >
         <div class="col-sm-2">
-            <input style="height: 28px" id="num_invoice" class="form-control form-control-sm" type="text" placeholder="№ накладной">
+            <input style="height: 28px" id="num_invoice" name="data_invoice" class="form-control form-control-sm" type="text" placeholder="№ накладной">
         </div>
         <label  class="font-weight-bold">от</label >
         <div class="col-sm-2">
-            <input type="date" id="date_invoice" style="height: 28px" min="2010-00-01" max="3000-12-31" class="form-control">
+            <input type="date" id="date_invoice" name="data_invoice" style="height: 28px" min="2010-00-01" max="3000-12-31" class="form-control">
         </div>
     </div>
     <div class="small" style="margin-left: 2.4%;">На выдачу (приему) инвентаря</div>
     <div class="form-group row" style="margin-left: 2.4%; margin-top: 1%">
         <strong>поезд (состав): поезд </strong>
         <div class="col-sm-1">
-            <input style="height: 30px" id="num_train" class="form-control form-control-sm" type="text" placeholder="№ поезда">
+            <input style="height: 30px" id="num_train" name="data_invoice" class="form-control form-control-sm" type="text" placeholder="№ поезда">
         </div>
     </div>
     <table class="table table-bordered text-center small" style="margin: auto; margin-top: 1%; margin-bottom: 1%; width: 95%;">
@@ -41,11 +42,11 @@
                     <tbody>
                     <tr>
                         <th>вагон №</th>
-                        <th><input style="height: 30px" id="num_wagon" class="form-control form-control-sm" type="text" placeholder="№ вагона"></th>
+                        <th><input style="height: 30px" id="num_wagon" name="data_invoice" class="form-control form-control-sm" type="text" placeholder="№ вагона"></th>
                     </tr>
                     <tr>
                         <th>зав.№:</th>
-                        <th><input style="height: 30px" id="id_wagon" class="form-control form-control-sm" type="text" placeholder="Заводской №"></th>
+                        <th><input style="height: 30px" id="id_wagon" name="data_invoice" class="form-control form-control-sm" type="text" placeholder="Заводской №"></th>
                     </tr>
                     </tbody>
                 </table>
@@ -73,248 +74,165 @@
       <tbody>
           <tr>
               <th class="text-left">1</th>
-              <th class="text-left">Книга описи и учета съемного мягкого имущества (Форма-11)</th>
-              <th style="padding: 0px;"><textarea id="r1c1" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r1c2" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r1c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r1c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r1c5i"></th>
-              <th style="padding: 0px;"><textarea id="r1c6" onkeyup="calculate_values()" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r1c7" onkeyup="calculate_values()" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r1c8i"></th>
+              <th class="text-left" name="data_table" >Книга описи и учета съемного мягкого имущества (Форма-11)</th>
+              <th style="padding: 0px;"><textarea id="r1c1" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r1c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r1c3" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r1c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r1c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r1c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r1c7" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r1c8i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           </tr>
           <tr>
               <th class="text-left">2</th>
-              <th class="text-left">Ковровая дорожка купейная шерсть (1,5*0,65)</th>
-              <th style="padding: 0px;"><textarea id="r2c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r2c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r2c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r2c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r2c5i"></th>
-              <th style="padding: 0px;"><textarea id="r2c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r2c7" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r2c8i"></th>
+              <th class="text-left" name="data_table" >Ковровая дорожка купейная шерсть (1,5*0,65)</th>
+              <th style="padding: 0px;"><textarea id="r2c1" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r2c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r2c3" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r2c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r2c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r2c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r2c7" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r2c8i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           </tr>
           <tr>
               <th class="text-left">3</th>
-              <th class="text-left">Комплект бязь, х/б рабочий</th>
-              <th style="padding: 0px;"><textarea id="r3c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r3c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r3c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r3c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r3c5i"></th>
-              <th style="padding: 0px;"><textarea id="r3c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r3c7" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r3c8i"></th>
-          </tr>
-          <tr>
-              <th class="font-weight-normal text-left"></th>
-              <th class="font-weight-normal text-left">Простынь бязь</th>
-              <th style="padding: 0px;"><textarea id="r4c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r4c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r4c3" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th class="font-weight-normal">XXX</th>
-              <th style="padding: 0px;"><textarea id="r4c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th id="r4c8i"></th>
-          </tr>
-          <tr>
-              <th class="text-left"></th>
-              <th class="font-weight-normal text-left">Наволочка бязь</th>
-              <th style="padding: 0px;"><textarea id="r5c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r5c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r5c3" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th class="font-weight-normal">XXX</th>
-              <th style="padding: 0px;"><textarea id="r5c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th id="r5c8i"></th>
-          </tr>
-          <tr>
-              <th class="text-left"></th>
-              <th class="font-weight-normal text-left">Полотенце х/б</th>
-              <th style="padding: 0px;"><textarea id="r6c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r6c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r6c3" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th class="font-weight-normal">XXX</th>
-              <th style="padding: 0px;"><textarea id="r6c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th id="r6c8i"></th>
+              <th class="text-left" name="data_table" >Комплект бязь, х/б рабочий</th>
+              <th style="padding: 0px;"><textarea id="r3c1" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r3c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r3c3" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r3c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r3c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r3c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r3c7" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r3c8i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           </tr>
           <tr>
               <th class="text-left">4</th>
-              <th class="text-left">Комплект купе бязь</th>
-              <th style="padding: 0px;"><textarea id="r7c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r7c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r7c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r7c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r7c5i"></th>
-              <th style="padding: 0px;"><textarea id="r7c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r7c7" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r7c8i"></th>
+              <th class="text-left" name="data_table">Комплект купе бязь</th>
+              <th style="padding: 0px;"><textarea id="r4c1" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r4c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r4c3" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r4c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r4c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r4c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r4c7" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r4c8i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           </tr>
-          <tr>
-              <th class="text-left"></th>
-              <th class="font-weight-normal text-left">Простынь бязь</th>
-              <th style="padding: 0px;"><textarea id="r8c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r8c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r8c3" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th class="font-weight-normal">XXX</th>
-              <th style="padding: 0px;"><textarea id="r8c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th id="r8c8i"></th>
-          </tr>
-          <tr>
-              <th class="text-left"></th>
-              <th class="font-weight-normal text-left">Наволочка бязь</th>
-              <th style="padding: 0px;"><textarea id="r9c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r9c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r9c3" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th class="font-weight-normal">XXX</th>
-              <th style="padding: 0px;"><textarea id="r9c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th id="r9c8i"></th>
-          </tr>
-          <tr>
-              <th class="text-left"></th>
-              <th class="font-weight-normal text-left">Пододеяльник бязь</th>
-              <th style="padding: 0px;"><textarea id="r10c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r10c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r10c3" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th class="font-weight-normal">XXX</th>
-              <th style="padding: 0px;"><textarea id="r10c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th id="r10c8i"></th>
-          </tr>
-          <tr>
-              <th class="text-left"></th>
-              <th class="font-weight-normal text-left">Полотенце махра</th>
-              <th style="padding: 0px;"><textarea id="r11c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r11c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r11c3" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th class="font-weight-normal">XXX</th>
-              <th style="padding: 0px;"><textarea id="r11c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th class="font-weight-normal">XXX</th>
-              <th id="r11c8i"></th>
           <tr>
               <th class="text-left">5</th>
-              <th class="text-left">Матрац ватный</th>
-              <th style="padding: 0px;"><textarea id="r12c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r12c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r12c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r12c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r12c5i"></th>
-              <th style="padding: 0px;"><textarea id="r12c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r12c7" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r12c8i"></th>
+              <th class="text-left" name="data_table">Матрац ватный</th>
+              <th style="padding: 0px;"><textarea id="r5c1" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r5c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r5c3" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r5c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r5c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r5c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r5c7" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r5c8i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           </tr>
           <tr>
               <th class="text-left">6</th>
-              <th class="text-left">Мешок для хранения постельного белья</th>
-              <th style="padding: 0px;"><textarea id="r13c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r13c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r13c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r13c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r13c5i"></th>
-              <th style="padding: 0px;"><textarea id="r13c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r13c7" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r13c8i"></th>
+              <th class="text-left" name="data_table" >Мешок для хранения постельного белья</th>
+              <th style="padding: 0px;"><textarea id="r6c1" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r6c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r6c3" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r6c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r6c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r6c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r6c7" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r6c8i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           </tr>
           <tr>
               <th class="text-left">7</th>
-              <th class="text-left">Одеяло синтетическое волокно</th>
-              <th style="padding: 0px;"><textarea id="r14c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r14c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r14c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r14c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r13c5i"></th>
-              <th style="padding: 0px;"><textarea id="r14c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r14c7" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r14c8i"></th>
+              <th class="text-left" name="data_table">Одеяло синтетическое волокно</th>
+              <th style="padding: 0px;"><textarea id="r7c1" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r7c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r7c3" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r7c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r7c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r7c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r7c7" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r7c8i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           </tr>
           <tr>
               <th class="text-left">8</th>
-              <th class="text-left">Подушка синтетическое волокно</th>
-              <th style="padding: 0px;"><textarea id="r15c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r15c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r15c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r15c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r15c5i"></th>
-              <th style="padding: 0px;"><textarea id="r15c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r15c7" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r15c8i"></th>
+              <th class="text-left" name="data_table" >Подушка синтетическое волокно</th>
+              <th style="padding: 0px;"><textarea id="r8c1" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r8c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r8c3" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r8c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r8c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r8c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r8c7" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r8c8i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           </tr>
           <tr>
               <th class="text-left">9</th>
-              <th class="text-left">Полотенце полулен</th>
-              <th style="padding: 0px;"><textarea id="r16c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r16c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r16c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r16c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r16c5i"></th>
-              <th style="padding: 0px;"><textarea id="r16c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r16c7" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r16c8i"></th>
+              <th class="text-left" name="data_table" >Полотенце полулен</th>
+              <th style="padding: 0px;"><textarea id="r9c1" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r9c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r9c3" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r9c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r9c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r9c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r9c7" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r9c8i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           </tr>
           <tr>
               <th class="text-left">10</th>
-              <th class="text-left">Полотенце х/б</th>
-              <th style="padding: 0px;"><textarea id="r17c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r17c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r17c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r17c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r17c5i"></th>
-              <th style="padding: 0px;"><textarea id="r17c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r17c7" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r17c8i"></th>
+              <th class="text-left" name="data_table" >Полотенце х/б</th>
+              <th style="padding: 0px;"><textarea id="r10c1" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r10c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r10c3" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r10c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r10c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r10c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r10c7" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r10c7i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           </tr>
           <tr>
               <th class="text-left">11</th>
-              <th class="text-left">Полотенце шелк</th>
-              <th style="padding: 0px;"><textarea id="r18c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r18c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r18c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r18c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r18c5i"></th>
-              <th style="padding: 0px;"><textarea id="r18c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r18c7" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r18c8i"></th>
+              <th class="text-left" name="data_table" >Полотенце шелк</th>
+              <th style="padding: 0px;"><textarea id="r11c1" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r11c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r11c3" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r11c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r11c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r11c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r11c7" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r11c8i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           <tr>
               <th class="text-left">12</th>
-              <th class="text-left">Салфетка для подоконных столиков полиэстер серая</th>
-              <th style="padding: 0px;"><textarea id="r19c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r19c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r19c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r19c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r19c5i"></th>
-              <th style="padding: 0px;"><textarea id="r19c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r19c7" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r19c8i"></th>
+              <th class="text-left" name="data_table" >Салфетка для подоконных столиков полиэстер серая</th>
+              <th style="padding: 0px;"><textarea id="r12c1" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r12c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r12c3" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r12c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r12c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r12c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r12c7" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r12c8i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           </tr>
           <tr>
               <th class="text-left">13</th>
-              <th class="text-left">Чехол на матрац х/б</th>
-              <th style="padding: 0px;"><textarea id="r20c1" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r20c2" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r20c3" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r20c4" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r20c5i"></th>
-              <th style="padding: 0px;"><textarea id="r20c6" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th style="padding: 0px;"><textarea id="r20c7" onkeyup="calculate_values(this)" class="text-center form-control form-control-sm"></textarea></th>
-              <th id="r20c8i"></th>
+              <th class="text-left" name="data_table" >Чехол на матрац х/б</th>
+              <th style="padding: 0px;"><textarea id="r13c1" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r13c2" name="data_table" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r13c3" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r13c4" name="data_table" onkeyup="add3a4to5(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r13c5i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r13c6" name="data_table" onkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r13c7" name="data_table" nkeyup="add6a7to8(this)" class="text-center form-control form-control-sm"></textarea></th>
+              <th style="padding: 0px;"><textarea id="r13c8i" name="data_table" readonly class="text-center form-control form-control-sm"></textarea></th>
           </tr>
         </tbody>
       </table>
     <div class="form-group row" style="margin-left: 2.4%; margin-top: 1%">
         <strong >В рейс: </strong>
         <div class="col-sm-2">
-            <input type="date" style="height: 28px" id="date_to_flight" min="2010-00-01" max="3000-12-31" class="form-control">
+            <input type="date" style="height: 28px" id="date_to_flight" name="data_invoice" min="2010-00-01" max="3000-12-31" class="form-control">
         </div>
     </div>
       <table class="table table-bordered small w-50" style="margin-left: 2.4%; margin-top: 1%; width: 95%;">
@@ -328,30 +246,30 @@
         <tbody>
           <tr>
             <th class="font-weight-normal">Выдал</th>
-            <th style="padding: 0px;"><textarea id="t1fio" class="text-center form-control form-control-sm"></textarea></th>
+            <th style="padding: 0px;"><textarea id="t1fio" name="data_invoice" class="text-center form-control form-control-sm"></textarea></th>
             <th class="font-weight-normal text-center">XXX</th>
           </tr>
           <tr>
             <th class="font-weight-normal">Принял экипировщик</th>
-            <th style="padding: 0px;"><textarea id="t2fio" class="text-center form-control form-control-sm"></textarea></th>
+            <th style="padding: 0px;"><textarea id="t2fio" name="data_invoice" class="text-center form-control form-control-sm"></textarea></th>
             <th class="font-weight-normal text-center">XXX</th>
           </tr>
           <tr>
             <th class="font-weight-normal">Принял проводник</th>
-            <th style="padding: 0px;"><textarea id="t3fio" class="text-center form-control form-control-sm"></textarea></th>
-            <th style="padding: 0px;"><textarea id="t3tabel" class="text-center form-control form-control-sm"></textarea></th>
+            <th style="padding: 0px;"><textarea id="t3fio" name="data_invoice" class="text-center form-control form-control-sm"></textarea></th>
+            <th style="padding: 0px;"><textarea id="t3tabel" name="data_invoice" class="text-center form-control form-control-sm"></textarea></th>
           </tr>
           <tr>
             <th class="font-weight-normal">Принял проводник</th>
-            <th style="padding: 0px;"><textarea id="t4fio" class="text-center form-control form-control-sm"></textarea></th>
-            <th style="padding: 0px;"><textarea id="t4tabel" class="text-center form-control form-control-sm"></textarea></th>
+            <th style="padding: 0px;"><textarea id="t4fio" name="data_invoice" class="text-center form-control form-control-sm"></textarea></th>
+            <th style="padding: 0px;"><textarea id="t4tabel" name="data_invoice" class="text-center form-control form-control-sm"></textarea></th>
           </tr>
         </tbody>
       </table>
       <div class="form-group row" style="margin-left: 2.4%; margin-top: 1%">
         <strong >Из рейса: </strong>
         <div class="col-sm-2">
-            <input type="date" style="height: 28px" id="date_from_flight" min="2010-00-01" max="3000-12-31" class="form-control">
+            <input type="date" style="height: 28px" id="date_from_flight" name="data_invoice" min="2010-00-01" max="3000-12-31" class="form-control">
         </div>
       </div>
       <table class="table table-bordered small w-50" style="margin-left: 2.4%;; margin-top: 1%; width: 95%;">
@@ -364,27 +282,27 @@
           <tbody>
             <tr>
                 <th class="font-weight-normal">Сдал проводник</th>
-                <th style="padding: 0px;"><textarea id="f1fio" class="text-center form-control form-control-sm"></textarea></th>
+                <th style="padding: 0px;"><textarea id="f1fio" name="data_invoice" class="text-center form-control form-control-sm"></textarea></th>
             </tr>
             <tr>
                 <th class="font-weight-normal">Принял экипировщик</th>
-                <th style="padding: 0px;"><textarea id="f2fio" class="text-center form-control form-control-sm"></textarea></th>
+                <th style="padding: 0px;"><textarea id="f2fio" name="data_invoice" class="text-center form-control form-control-sm"></textarea></th>
             </tr>
             <tr>
                 <th class="font-weight-normal">Принял использованное</th>
-                <th style="padding: 0px;"><textarea id="f3fio" class="text-center form-control form-control-sm"></textarea></th>
+                <th style="padding: 0px;"><textarea id="f3fio" name="data_invoice" class="text-center form-control form-control-sm"></textarea></th>
             </tr>
             <tr>
                 <th class="font-weight-normal">Принял неиспользованное</th>
-                <th style="padding: 0px;"><textarea id="f4fio" class="text-center form-control form-control-sm"></textarea></th>
+                <th style="padding: 0px;"><textarea id="f4fio" name="data_invoice" class="text-center form-control form-control-sm"></textarea></th>
             </tr>
             <tr>
                 <th class="font-weight-normal">Представитель РЖД</th>
-                <th style="padding: 0px;"><textarea id="f5fio" class="text-center form-control form-control-sm"></textarea></th>
+                <th style="padding: 0px;"><textarea id="f5fio" name="data_invoice" class="text-center form-control form-control-sm"></textarea></th>
             </tr>
             <tr>
                 <th class="font-weight-normal">ЛНП</th>
-                <th style="padding: 0px;"><textarea id="f6fio" class="text-center form-control form-control-sm"></textarea></th>
+                <th style="padding: 0px;"><textarea id="f6fio" name="data_invoice" class="text-center form-control form-control-sm"></textarea></th>
             </tr>
           </tbody>
         </table>
@@ -396,7 +314,7 @@
                     <label type="text" class="form-control">Объяснения виновного в недостаче лица: С недостачей согласен. Прошу вычесть из заработной платы.</label>
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <input id="minus_zp" type="checkbox">
+                            <input id="minus_zp" name="data_invoice" type="checkbox">
                         </div>
                     </div>
                 </div>
@@ -407,7 +325,7 @@
                 <div class="form-group row">
                     <label style="margin-left: 2.4%" class="font-weight-bold">Фамилия: </label >
                     <div class="col-sm-2">
-                        <input style="height: 28px" id="conductor_fio" class="form-control form-control-sm" type="text" placeholder="Фамилия">
+                        <input style="height: 28px" id="conductor_fio" name="data_invoice" class="form-control form-control-sm" type="text" placeholder="Фамилия">
                     </div>
                 </div>
             </th>
@@ -415,7 +333,8 @@
         </tbody>
     </table>
     <div style="margin-left: 2.4%; margin-bottom: 1%">
-        <button type="button" id="save" class="btn btn-success">Подтвердить</button>
+        <button type="submit" name="save" class="btn btn-success">Подтвердить</button>
     </div>
+  </form>
   </body>
 </html>
