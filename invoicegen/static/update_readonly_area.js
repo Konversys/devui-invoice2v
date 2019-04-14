@@ -13,7 +13,7 @@ function calc_readonly_data(e) {
         }
         else
         {
-            $(itemId(row, 8)).val('');
+            $(itemId(row, 5)).val('');
         }
     }
 
